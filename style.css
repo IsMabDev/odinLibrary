@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 3px solid;
+  /* border: 3px solid red; */
   height: 100vh;
 }
 header {
@@ -48,7 +48,7 @@ main {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 5vh;
   /* height: 70vh; */
   background-color: rgba(240, 248, 255, 30%);
@@ -62,17 +62,21 @@ main p {
   width: 100%;
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
   overflow: auto;
   padding: 2vmin;
 }
 .bookCard {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   padding: 1vmin;
   border-radius: 3vmin;
-  border-left: 3vmin solid yellowgreen;
-  font-size: 20px;
-  /* width: max-content; */
+  border-left: 3vmin solid rgba(83, 34, 5, 0.437);
+  font-size: 1.2em;
+  justify-items: space-between;
+  /* width: 300px; */
+  height: 100%;
 }
 
 #booksContainer button {
@@ -82,6 +86,8 @@ main p {
   cursor: pointer;
   background-color: red;
   border-radius: 50%;
+  align-self: left;
+  justify-self: left;
 }
 main > button {
   background-color: #7d736f;
@@ -97,4 +103,5 @@ footer {
   height: 10vh;
   width: 100%;
   align-self: center;
+  background-color: rgba(0, 255, 255, 30%);
 }
