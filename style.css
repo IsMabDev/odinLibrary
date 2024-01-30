@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url("./images/libraryBackground.jpg");
+  background-size: cover;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 3px solid;
+  height: 100vh;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding-top: 5vh;
+  height: 25vmin;
+  width: 100%;
+  font-size: min(2vw, 1.5rem);
+}
+header h1,
+blockquote {
+  margin: 0 auto;
+  color: white;
+}
+blockquote {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+blockquote #author {
+  align-self: flex-end;
+  padding: 2vh;
+}
+
+main {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5vh;
+  height: 70vh;
+  background-color: rgba(240, 248, 255, 30%);
+  gap: 3vmin;
+}
+main p {
+  text-align: center;
+  color: rgb(95, 50, 91);
+}
+#booksContainer {
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* resize: both; */
+  overflow: auto;
+}
+.bookCard {
+  background-color: white;
+  padding: 2vmin;
+  border-radius: 3vmin;
+  border-left: 3vmin solid yellowgreen;
+  font-size: 10px;
+  width: 100%;
+}
+
+#booksContainer button {
+  width: 5vmin;
+  height: 5vmin;
+  border: none;
+  cursor: pointer;
+  background-color: red;
+  border-radius: 50%;
+}
+main > button {
+  background-color: #7d736f;
+  border: none;
+  border-radius: 7vmin;
+  height: 10vmin;
+  width: 20vmin;
+  color: white;
+  font-size: 2.5vmin;
+  cursor: pointer;
+}
+footer {
+  height: 10vh;
+  width: 100%;
+  align-self: center;
+}
