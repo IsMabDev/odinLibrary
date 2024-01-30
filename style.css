@@ -50,7 +50,7 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 5vh;
-  height: 70vh;
+  /* height: 70vh; */
   background-color: rgba(240, 248, 255, 30%);
   gap: 3vmin;
 }
@@ -63,16 +63,16 @@ main p {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  /* resize: both; */
   overflow: auto;
+  padding: 2vmin;
 }
 .bookCard {
   background-color: white;
-  padding: 2vmin;
+  padding: 1vmin;
   border-radius: 3vmin;
   border-left: 3vmin solid yellowgreen;
-  font-size: 10px;
-  width: 100%;
+  font-size: 20px;
+  /* width: max-content; */
 }
 
 #booksContainer button {
