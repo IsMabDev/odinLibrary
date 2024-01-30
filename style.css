@@ -23,7 +23,7 @@ header {
   justify-items: center;
   align-items: center;
   padding-top: 5vh;
-  height: 25vh;
+  height: 25vmax;
   width: 100%;
   font-size: min(2vw, 1.5rem);
 }
