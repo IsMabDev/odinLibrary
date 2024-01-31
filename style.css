@@ -15,17 +15,19 @@ body {
   flex-direction: column;
   justify-content: space-between;
   /* border: 3px solid red; */
-  height: 100vh;
+  /* height: 100vh; */
 }
 header {
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  justify-content: center;
   padding-top: 5vh;
   height: 25vmax;
   width: 100%;
   font-size: min(2vw, 1.5rem);
+  margin: auto 0;
 }
 header h1,
 blockquote {
@@ -50,7 +52,6 @@ main {
   align-items: center;
   justify-content: center;
   padding: 5vh;
-  /* height: 70vh; */
   background-color: rgba(240, 248, 255, 30%);
   gap: 3vmin;
 }
@@ -100,8 +101,16 @@ main > button {
   cursor: pointer;
 }
 footer {
-  height: 10vh;
+  height: 15vh;
   width: 100%;
-  align-self: center;
-  background-color: rgba(0, 255, 255, 30%);
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  /* min-height: 10vh; */
+  /* align-self: center; */
+  background-color: rgba(0, 255, 234, 0.323);
+  color: white;
+  font-size: 2em;
 }
