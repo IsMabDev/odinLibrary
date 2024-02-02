@@ -1,0 +1,42 @@
+form {
+  background-color: #968282;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: min(500px, 50vw);
+  font-size: 1.5em;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: white;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+form button {
+  background-color: #7f5454;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  height: min(50px, 50vw);
+  width: min(200px, 100vw);
+  font-size: 1.3em;
+}
+#dialogButtons{
+  display: flex;
+  justify-content: space-between;
+}

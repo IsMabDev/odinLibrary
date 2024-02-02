@@ -5,6 +5,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 body {
   background-image: url("./images/libraryBackground.jpg");
@@ -12,10 +13,9 @@ body {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  /* border: 3px solid red; */
-  /* height: 100vh; */
+  flex-direction: column;
+  border: 3px solid red;
 }
 header {
   display: flex;
@@ -24,10 +24,11 @@ header {
   align-items: center;
   justify-content: center;
   padding-top: 5vh;
-  height: 25vmax;
+  /* height: 150px; */
   width: 100%;
   font-size: min(2vw, 1.5rem);
-  margin: auto 0;
+  /* margin: auto 0; */
+  border: 5px solid;
 }
 header h1,
 blockquote {
@@ -55,9 +56,10 @@ main {
   background-color: rgba(240, 248, 255, 30%);
   gap: 3vmin;
 }
-main p {
+#emptyLibrary {
   text-align: center;
   color: rgb(95, 50, 91);
+  font-size: 2em;
 }
 #booksContainer {
   width: 100%;
@@ -75,7 +77,6 @@ main p {
   border-radius: 3vmin;
   border-left: 3vmin solid rgba(83, 34, 5, 0.437);
   font-size: 1.2em;
-  justify-items: space-between;
   /* width: 300px; */
   height: 100%;
 }
@@ -87,7 +88,6 @@ main p {
   cursor: pointer;
   background-color: red;
   border-radius: 50%;
-  align-self: left;
   justify-self: left;
 }
 main > button {
@@ -100,8 +100,9 @@ main > button {
   font-size: 2.5vmin;
   cursor: pointer;
 }
+
 footer {
-  height: 15vh;
+  /* height: 15vmax; */
   width: 100%;
   display: flex;
   justify-items: center;
@@ -109,8 +110,51 @@ footer {
   align-content: center;
   align-items: center;
   /* min-height: 10vh; */
-  /* align-self: center; */
+
   background-color: rgba(0, 255, 234, 0.323);
+  color: rgb(223, 98, 98);
+  font-size: 2vmax;
+}
+
+form {
+  background-color: #968282;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: min(500px, 50vw);
+  font-size: 1.5em;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
   color: white;
-  font-size: 2em;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+form button {
+  background-color: #7f5454;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  height: min(50px, 50vw);
+  width: min(200px, 100vw);
+  font-size: 1.3em;
+}
+#dialogButtons {
+  display: flex;
+  justify-content: space-between;
 }
