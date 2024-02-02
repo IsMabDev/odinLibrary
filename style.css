@@ -7,6 +7,7 @@ body {
   padding: 0;
   height: 100%;
 }
+
 body {
   background-image: url("./images/libraryBackground.jpg");
   background-size: cover;
@@ -15,7 +16,6 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  border: 3px solid red;
 }
 header {
   display: flex;
@@ -24,11 +24,7 @@ header {
   align-items: center;
   justify-content: center;
   padding-top: 5vh;
-  /* height: 150px; */
-  width: 100%;
   font-size: min(2vw, 1.5rem);
-  /* margin: auto 0; */
-  border: 5px solid;
 }
 header h1,
 blockquote {
@@ -57,17 +53,23 @@ main {
   gap: 3vmin;
 }
 #emptyLibrary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   color: rgb(95, 50, 91);
-  font-size: 2em;
+  font-size: min(2vw, 2em);
 }
 #booksContainer {
   width: 100%;
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
-  overflow: auto;
+  grid-template-columns: repeat(auto-fit, minmax(30vh, 1fr));
+  /* overflow: auto; */
   padding: 2vmin;
+}
+#emptyLibrary p {
+  width: 70%;
 }
 .bookCard {
   display: flex;
@@ -76,8 +78,7 @@ main {
   padding: 1vmin;
   border-radius: 3vmin;
   border-left: 3vmin solid rgba(83, 34, 5, 0.437);
-  font-size: 1.2em;
-  /* width: 300px; */
+  font-size: min(1.5vw, 1.2rem);
   height: 100%;
 }
 
@@ -102,8 +103,7 @@ main > button {
 }
 
 footer {
-  /* height: 15vmax; */
-  width: 100%;
+  height: 7vh;
   display: flex;
   justify-items: center;
   justify-content: center;
@@ -113,7 +113,7 @@ footer {
 
   background-color: rgba(0, 255, 234, 0.323);
   color: rgb(223, 98, 98);
-  font-size: 2vmax;
+  font-size: min(3vw, 2.5rem);
 }
 
 form {
@@ -157,4 +157,8 @@ form button {
 #dialogButtons {
   display: flex;
   justify-content: space-between;
+}
+form input:invalid,
+select:invalid {
+  border-color: red;
 }

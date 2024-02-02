@@ -29,7 +29,12 @@ const cancelDialog = document.querySelector("#cancelDialog");
 const saveDialog = document.querySelector("#saveDialog");
 
 const titleNewBook = document.querySelector("#title");
+const authorNewBook = document.querySelector("#dialogAuthor");
+const pagesNewBook = document.querySelector("#pages");
+const isReadNewBook = document.querySelector("#read");
 updateLibrary();
+
+const addForm = document.querySelector("#bookDialog>form");
 addBookButton.addEventListener("click", () => {
   addBookDialog.showModal();
 });
@@ -40,12 +45,22 @@ cancelDialog.addEventListener("click", () => {
 
 saveDialog.addEventListener("click", (e) => {
   e.preventDefault();
-  const newBook = new Book(titleNewBook.value, "qsdf", 321, true);
-  addBookToLibrary(newBook);
-  myLibrary;
-  console.log("myLibrary: ", myLibrary);
-  updateLibrary();
-  addBookDialog.close();
+  if (addForm.checkValidity()) {
+    const newBook = new Book(
+      titleNewBook.value,
+      authorNewBook.value,
+      pagesNewBook.value,
+      isReadNewBook.value === "Yes" ? true : false
+    );
+    addBookToLibrary(newBook);
+    myLibrary;
+    console.log("myLibrary: ", myLibrary);
+    updateLibrary();
+    addForm.reset();
+    addBookDialog.close();
+  } else {
+    alert("please fill all the required fields");
+  }
 });
 
 function updateLibrary() {
@@ -56,12 +71,17 @@ function updateLibrary() {
     if (isEmpty) {
       booksContainer.innerHTML = "";
     }
+
     booksContainer.innerHTML += `<div class="bookCard">
         <h1 class="bookTitle">Title: ${
           myLibrary[myLibrary.length - 1].title
         }</h1>
-        <h4 class="bookAuthor">Author: My author</h4>
-        <h4 class="bookPagesNumber">Pages Number: 295</h4>
+        <h4 class="bookAuthor">Author:  ${
+          myLibrary[myLibrary.length - 1].author
+        }</h4>
+        <h4 class="bookPagesNumber">Pages Number: ${
+          myLibrary[myLibrary.length - 1].pageNumbers
+        }</h4>
         <button class="isRead" title="isRead" value="true"></button>
       </div>`;
     isEmpty = false;
