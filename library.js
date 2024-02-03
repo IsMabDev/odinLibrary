@@ -1,9 +1,11 @@
 const myLibrary = [];
 isEmpty = true;
+currentIndex = 0;
 
 const booksContainer = document.querySelector("#booksContainer");
 
 function Book(title, author, pageNumbers, isRead) {
+  this.index = currentIndex;
   this.title = title;
   this.author = author;
   this.pageNumbers = pageNumbers;
@@ -16,9 +18,10 @@ function Book(title, author, pageNumbers, isRead) {
 }
 function addBookToLibrary(object) {
   myLibrary.push(object);
+  currentIndex++;
 }
 const theHobbit = new Book("The Hobbit", "J.R.R Toliken", 295, true);
-//addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
 
 const addBookButton = document.querySelector("#addBook");
 
@@ -35,6 +38,7 @@ const isReadNewBook = document.querySelector("#read");
 updateLibrary();
 
 const addForm = document.querySelector("#bookDialog>form");
+
 addBookButton.addEventListener("click", () => {
   addBookDialog.showModal();
 });
@@ -50,7 +54,7 @@ saveDialog.addEventListener("click", (e) => {
       titleNewBook.value,
       authorNewBook.value,
       pagesNewBook.value,
-      isReadNewBook.value === "Yes" ? true : false
+      isReadNewBook.value === "yes" ? true : false
     );
     addBookToLibrary(newBook);
     myLibrary;
@@ -82,8 +86,45 @@ function updateLibrary() {
         <h4 class="bookPagesNumber">Pages Number: ${
           myLibrary[myLibrary.length - 1].pageNumbers
         }</h4>
-        <button class="isRead" title="isRead" value="true"></button>
+        <div class="cardButtons">
+        <button class="isRead" title="isRead" value="true">${
+          myLibrary[myLibrary.length - 1].isRead ? "is read" : "not yet read"
+        }</button>
+
+        <button class="deleteBook"></button>
+        
+        </div>
+        <div class="index">${myLibrary[myLibrary.length - 1].index}</div>
       </div>`;
+    const deleteButtons = document.querySelectorAll(".deleteBook");
+    console.log("deleteButtons: ", deleteButtons);
+    deleteButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        container = button.parentElement.parentElement;
+        const indexOfElement = container.querySelector(".index");
+
+        myLibrary.splice(
+          myLibrary.findIndex((obj) => {
+            console.log("indexOfElement text: ", indexOfElement.textContent);
+            console.log("obj.index: ", obj.index);
+
+            return obj.index == indexOfElement.textContent;
+          }),
+          1
+        );
+
+        console.log("myLibrary after delete: ", myLibrary);
+
+        container.remove();
+
+        if (myLibrary.length === 0) {
+          isEmpty = true;
+          updateLibrary();
+        } else {
+          isEmpty = false;
+        }
+      });
+    });
     isEmpty = false;
   }
 }

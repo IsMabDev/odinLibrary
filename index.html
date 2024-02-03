@@ -45,7 +45,14 @@
         </form>
       </dialog>
       <div id="booksContainer">
+        <div class="cardButtons">
+          <button class=" isRead" title="isRead" value="true">${
+            myLibrary[myLibrary.length - 1].isRead ? "is read" : "not yet read"
+            }</button>
 
+          <button class="deleteBook">Delete</button>
+          <div class="index">${myLibrary[myLibrary.length - 1].index}</div>
+        </div>
 
 
 

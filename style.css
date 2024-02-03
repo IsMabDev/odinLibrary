@@ -81,15 +81,26 @@ main {
   font-size: min(1.5vw, 1.2rem);
   height: 100%;
 }
+.cardButtons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
 
 #booksContainer button {
-  width: 5vmin;
+  width: 10vmin;
+  margin-right: 5vw;
   height: 5vmin;
   border: none;
   cursor: pointer;
-  background-color: red;
-  border-radius: 50%;
-  justify-self: left;
+  font-size: min(1.5vw, 2.5rem);
+}
+.deleteBook {
+  background-image: url("./images/trash-2.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3vw;
+  background-color: white;
 }
 main > button {
   background-color: #7d736f;
@@ -100,6 +111,10 @@ main > button {
   color: white;
   font-size: 2.5vmin;
   cursor: pointer;
+}
+
+.index {
+  visibility: hidden;
 }
 
 footer {
